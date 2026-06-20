@@ -1,0 +1,104 @@
+/* Contact Section */
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    background: var(--bg-card);
+    padding: 60px;
+    border-radius: 0;
+    border: var(--glass-border);
+}
+
+.contact-info h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--text-main);
+}
+
+.contact-info p {
+    color: var(--text-muted);
+    margin-bottom: 40px;
+}
+
+.contact-details {
+    margin-bottom: 40px;
+}
+
+.contact-details li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    color: var(--text-main);
+}
+
+.contact-details i {
+    color: var(--primary-accent);
+    font-size: 1.2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-medium);
+}
+
+[data-theme="dark"] .social-links a {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-links a:hover {
+    background: rgba(0, 0, 0, 0.1);
+    border-color: var(--secondary-accent);
+    color: var(--secondary-accent);
+    transform: translateY(-3px);
+}
+
+[data-theme="dark"] .social-links a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px 20px;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 0;
+    color: var(--text-main);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: all var(--transition-medium);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--input-placeholder);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-accent);
+    background: var(--input-focus-bg);
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}

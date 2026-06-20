@@ -1,0 +1,185 @@
+/* Responsive Design */
+@media (max-width: 992px) {
+    .name { font-size: 4rem; }
+    .role { font-size: 2rem; }
+    .about-content, .contact-content {
+        grid-template-columns: 1fr;
+    }
+    .about-image {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-btn { display: block; }
+    
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        background: var(--bg-card);
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.4s ease;
+        border-left: var(--glass-border);
+    }
+    
+    .nav-links.active { right: 0; }
+    
+    .menu-btn.active .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    .menu-btn.active .bar:nth-child(2) { opacity: 0; }
+    .menu-btn.active .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .name { font-size: 3rem; }
+    .role { font-size: 1.5rem; }
+    
+    .hero-cta { flex-direction: column; }
+    
+    .contact-content { padding: 30px; }
+    
+    .section-padding { padding: 60px 0; }
+}
+
+@media (max-width: 480px) {
+    .name { font-size: 2.5rem; }
+    .stats-grid { grid-template-columns: 1fr; }
+    .filter-btn { padding: 6px 15px; font-size: 0.9rem; }
+}
+
+
+/* Anime Accents */
+.jp-watermark {
+    font-family: 'Noto Serif JP', serif;
+    opacity: 0.3;
+    font-size: 1rem;
+    margin-left: 10px;
+    letter-spacing: 5px;
+    color: var(--secondary-accent);
+}
+.system-status {
+    font-family: 'Rajdhani', sans-serif;
+    color: var(--secondary-accent);
+    font-size: 1rem;
+    margin-top: 30px;
+    letter-spacing: 3px;
+    opacity: 0.7;
+}
+.btn-primary, .btn-secondary {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.project-card, .focus-card, .cert-card, .stat-item {
+    border: 1px solid var(--secondary-accent);
+}
+
+/* EXTREME ANIME STYLING OVERRIDES */
+
+/* CRT Scanlines Removed for Samurai Theme */
+
+/* Giant Vertical Japanese Watermark */
+.bg-vertical-text {
+    position: fixed;
+    right: 3%;
+    top: -5%;
+    bottom: 0;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 15rem;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.03);
+    z-index: -2;
+    pointer-events: none;
+    line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    user-select: none;
+}
+
+/* Skewed Action Titles */
+/* Skewed Action Titles — only on decorative headings, not interactive elements */
+.section-title h2 {
+    transform: skewX(-10deg);
+}
+
+/* Hero Top Left Tree Background */
+.hero {
+    position: relative;
+}
+
+/* Put the tree image in a pseudo-element behind the canvas */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/sakura_top_left_bg.webp');
+    background-size: 35%;
+    background-position: top left;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -2; /* behind canvas which is -1 */
+    transition: filter 0.5s ease, opacity 0.5s ease;
+}
+
+/* Dark mode: Invert white background to black, maintain red hue */
+[data-theme="dark"] .hero::before {
+    filter: invert(1) hue-rotate(180deg) brightness(0.8);
+    opacity: 0.85; /* Soften slightly to blend perfectly */
+}
+
+.hero .hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero .scroll-down {
+    position: absolute;
+    z-index: 1;
+}
+
+/* Ensure logo stays visible above tree */
+#navbar {
+    z-index: 1000;
+}
+
+.logo {
+    position: relative;
+    z-index: 1001;
+    text-shadow: 0 0 10px var(--bg-dark), 0 0 20px var(--bg-dark);
+}
+
+/* Samurai Slash Styling */
+.project-card, .focus-card, .cert-card, .stat-item {
+    border-radius: 20px 0 20px 0;
+}
+.btn {
+    border-radius: 10px 0 10px 0;
+}
+
+/* Differentiate CTA buttons */
+.hero-cta .btn:first-child {
+    background: var(--primary-accent);
+    color: var(--bg-dark);
+    border-color: var(--primary-accent);
+}
+
+.hero-cta .btn:first-child:hover {
+    background: transparent;
+    color: var(--primary-accent);
+}
+
+.hero-cta .btn:first-child::before {
+    display: none;
+}

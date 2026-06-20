@@ -1,0 +1,14 @@
+@import url('modules/css-variables-reset.css');
+@import url('modules/global-utility-classes.css');
+@import url('modules/navigation.css');
+@import url('modules/hero-section.css');
+@import url('modules/about-section.css');
+@import url('modules/focus-areas.css');
+@import url('modules/projects-section.css');
+@import url('modules/certifications.css');
+@import url('modules/publications-section.css');
+@import url('modules/contact-section.css');
+@import url('modules/footer.css');
+@import url('modules/responsive-design.css');
+@import url('modules/loading-screen-katana-slash-intro.css');
+@import url('modules/back-to-top-button.css');
