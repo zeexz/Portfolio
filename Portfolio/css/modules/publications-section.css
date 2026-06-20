@@ -1,0 +1,122 @@
+/* Publications Section */
+.publications-slider {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.publications-slider::before,
+.publications-slider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.publications-slider::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-dark), transparent);
+}
+
+.publications-slider::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg-dark), transparent);
+}
+
+.publications-track {
+    display: flex;
+    width: calc(350px * 10 + 30px * 10);
+    animation: scroll 40s linear infinite;
+    gap: 30px;
+}
+
+.publications-track:hover {
+    animation-play-state: paused;
+}
+
+.pub-card {
+    width: 350px;
+    flex-shrink: 0;
+    background: var(--bg-card);
+    border-radius: 20px 0 20px 0;
+    padding: 30px;
+    border: var(--glass-border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: all var(--transition-medium);
+    box-shadow: var(--glass-shadow);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--secondary-accent);
+}
+
+.pub-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(226, 232, 240, 0.4);
+    box-shadow: 6px 6px 0px var(--secondary-accent);
+}
+
+.pub-card:hover .folder-icon {
+    color: var(--primary-accent);
+}
+
+.pub-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.pub-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.pub-links a {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+}
+
+.pub-links a:hover {
+    color: var(--primary-accent);
+}
+
+.pub-title {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--text-main);
+    transition: color var(--transition-fast);
+}
+
+.pub-card:hover .pub-title {
+    color: var(--primary-accent);
+}
+
+.pub-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.pub-platform {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    color: var(--secondary-accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-350px * 5 - 30px * 5));
+    }
+}
