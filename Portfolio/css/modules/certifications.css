@@ -1,0 +1,52 @@
+/* Certifications */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.cert-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--bg-card);
+    padding: 25px;
+    border-radius: 12px;
+    border: var(--glass-border);
+    border-left: 4px solid var(--primary-accent);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: all var(--transition-medium);
+    box-shadow: var(--glass-shadow);
+}
+
+.cert-card:hover {
+    transform: translateX(5px);
+    box-shadow: 4px 4px 0px var(--secondary-accent);
+    border-color: rgba(226, 232, 240, 0.4);
+}
+
+.cert-icon {
+    font-size: 2rem;
+    color: var(--primary-accent);
+    opacity: 0.8;
+}
+
+.cert-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.cert-issuer {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.cert-date {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: var(--font-heading);
+    display: block;
+    margin-top: 5px;
+}
